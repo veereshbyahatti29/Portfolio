@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VEERESH S. B. | Creative Graphic Designer & Visual Artist</title>
+
+<!-- GOOGLE FONTS -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- SWIPER -->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+background:#050816;
+color:white;
+font-family:'Inter',sans-serif;
+overflow-x:hidden;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+background:#2f6bff;
+border-radius:20px;
+}
+
+/* GLOBAL */
+
+section{
+padding:120px 10%;
+position:relative;
+}
+
+.section-title{
+font-size:58px;
+font-family:'Cinzel',serif;
+margin-bottom:25px;
+text-align:center;
+}
+
+.section-subtitle{
+max-width:700px;
+margin:auto;
+text-align:center;
+opacity:0.7;
+line-height:1.9;
+margin-bottom:70px;
+}
+
+/* MOUSE GLOW */
+
+.mouse-glow{
+position:fixed;
+width:260px;
+height:260px;
+border-radius:50%;
+background:radial-gradient(circle,rgba(47,107,255,0.2),transparent 70%);
+pointer-events:none;
+transform:translate(-50%,-50%);
+z-index:-1;
+filter:blur(35px);
+}
+
+/* 3D CAROUSEL STYLES */
+        .carousel-container {
+            perspective: 1200px; /* Crucial for 3D depth */
+            padding: 100px 0;
+            overflow: hidden;
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 450px;
+            transform-style: preserve-3d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            position: absolute;
+            width: 300px;
+            height: 400px;
+            background: #1a1a1a;
+            border: 2px solid #4169E1;
+            border-radius: 15px;
+            transition: all 0.6s ease-in-out;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card .label {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            box-sizing: border-box;
+        }
+
+        /* 3D Positions */
+        .card.active {
+            transform: translateZ(250px) scale(1.1);
+            z-index: 10;
+            opacity: 1;
+            box-shadow: 0 0 40px rgba(65, 105, 225, 0.6);
+        }
+
+        .card.prev {
+            transform: translateX(-350px) translateZ(0px) rotateY(35deg);
+            z-index: 5;
+            opacity: 0.5;
+        }
+
+        .card.next {
+            transform: translateX(350px) translateZ(0px) rotateY(-35deg);
+            z-index: 5;
+            opacity: 0.5;
+        }
+
+        .card.hidden {
+            transform: translateZ(-500px);
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+
+/* HEADER */
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:24px 10%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,0.03);
+backdrop-filter:blur(20px);
+border-bottom:1px solid rgba(255,255,255,0.08);
+z-index:999;
+}
+
+.logo{
+font-size:30px;
+font-family:'Cinzel',serif;
+font-weight:700;
+letter-spacing:2px;
+}
+
+nav{
+display:flex;
+gap:35px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:15px;
+opacity:0.8;
+transition:0.4s;
+}
+
+nav a:hover{
+color:#4da3ff;
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:80px;
+padding-top:160px;
+overflow:hidden;
+}
+/* WELCOME TEXT */
+
+.welcome-text{
+
+    font-size:10px;
+
+    letter-spacing:8px;
+
+    color:#4d8dff;
+
+    text-transform:uppercase;
+
+    text-align:left;
+
+    opacity:0;
+
+    animation:fadeInUp 2s ease forwards;
+}
+
+/* FADE IN ANIMATION */
+
+@keyframes fadeInUp{
+
+    0%{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    100%{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* HERO GLOW */
+
+.hero-glow{
+position:absolute;
+width:700px;
+height:700px;
+border-radius:50%;
+background:radial-gradient(circle,#2f6bff,transparent 70%);
+filter:blur(140px);
+opacity:0.25;
+top:-150px;
+right:-100px;
+z-index:-1;
+animation:glowMove 8s ease-in-out infinite alternate;
+}
+
+@keyframes glowMove{
+100%{
+transform:translateY(40px) translateX(-40px);
+}
+}
+
+/* LEFT */
+
+.hero-left{
+flex:1;
+}
+
+.dynamic-text{
+font-size:15px;
+letter-spacing:3px;
+text-transform:uppercase;
+margin-bottom:25px;
+color:#4da3ff;
+text-shadow:0 0 20px #2f6bff;
+transition:0.5s;
+}
+
+.hero-left h1{
+font-size:6.4vw;
+line-height:1;
+font-family:'Cinzel',serif;
+margin-bottom:25px;
+}
+
+.hero-left h1 span{
+color:#4da3ff;
+text-shadow:0 0 20px #2f6bff;
+}
+
+.hero-left h3{
+font-size:15px;
+font-weight:400;
+line-height:1.5;
+margin-bottom:25px;
+max-width:700px;
+}
+
+.hero-left p{
+max-width:650px;
+line-height:1.9;
+opacity:0.7;
+font-size:17px;
+}
+
+/* BUTTONS */
+
+.hero-buttons{
+display:flex;
+gap:20px;
+margin-top:45px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:16px 34px;
+border:none;
+border-radius:60px;
+background:rgba(255,255,255,0.06);
+backdrop-filter:blur(20px);
+color:white;
+cursor:pointer;
+font-size:15px;
+border:1px solid rgba(77,163,255,0.3);
+box-shadow:0 0 20px rgba(47,107,255,0.15);
+transition:0.4s;
+}
+
+.btn:hover{
+transform:translateY(-6px);
+box-shadow:0 0 35px rgba(47,107,255,0.4);
+}
+
+.outline{
+background:transparent;
+}
+
+/* RIGHT IMAGE */
+
+.hero-right{
+flex:1;
+display:flex;
+justify-content:center;
+}
+
+.image-card{
+width:400px;
+height:520px;
+border-radius:35px;
+overflow:hidden;
+position:relative;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(30px);
+border:1px solid rgba(255,255,255,0.08);
+box-shadow:
+0 0 50px rgba(47,107,255,0.25),
+0 30px 60px rgba(0,0,0,0.45);
+animation:floatCard 5s ease-in-out infinite;
+}
+
+@keyframes floatCard{
+50%{
+transform:translateY(-15px);
+}
+}
+
+.image-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.image-overlay{
+position:absolute;
+bottom:0;
+width:100%;
+padding:35px;
+background:linear-gradient(to top,rgba(0,0,0,0.85),transparent);
+}
+
+.image-overlay h2{
+font-size:28px;
+margin-bottom:8px;
+}
+
+.image-overlay p{
+opacity:0.7;
+}
+
+/* 3D CAROUSEL */
+
+.carousel-section{
+overflow:hidden;
+}
+
+.swiper{
+width:100%;
+padding-top:50px;
+padding-bottom:80px;
+}
+
+.swiper-slide{
+width:340px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(20px);
+border-radius:30px;
+overflow:hidden;
+border:1px solid rgba(255,255,255,0.08);
+box-shadow:0 0 30px rgba(47,107,255,0.15);
+transition:0.5s;
+}
+
+.swiper-slide:hover{
+transform:translateY(-10px);
+box-shadow:0 0 45px rgba(47,107,255,0.3);
+}
+
+.swiper-slide img{
+width:100%;
+height:420px;
+object-fit:cover;
+}
+
+.slide-content{
+padding:25px;
+}
+
+.slide-content h3{
+font-size:24px;
+margin-bottom:12px;
+}
+
+.slide-content p{
+opacity:0.7;
+line-height:1.7;
+}
+ /* PARALLAX SHOWCASE */
+
+.parallax-cta{
+    position:relative;
+    height:70vh;
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.parallax-cta img{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-2;
+}
+
+.parallax-cta::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.65);
+    z-index:-1;
+}
+
+.parallax-content{
+    max-width:700px;
+    padding:20px;
+}
+
+.parallax-content h2{
+    font-size:4vw;
+    font-family:'Cinzel',serif;
+    margin-bottom:20px;
+}
+
+.parallax-content p{
+    opacity:0.8;
+    line-height:1.8;
+    font-size:18px;
+}
+/* FULLSCREEN IMAGE */
+
+.fullscreen-image{
+height:100vh;
+background:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop') center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+position:relative;
+}
+
+.fullscreen-image::before{
+content:'';
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.65);
+backdrop-filter:blur(2px);
+}
+
+.fullscreen-content{
+position:relative;
+z-index:2;
+max-width:900px;
+}
+
+.fullscreen-content h1{
+font-size:6vw;
+font-family:'Cinzel',serif;
+margin-bottom:25px;
+}
+
+.fullscreen-content p{
+font-size:20px;
+line-height:1.8;
+opacity:0.8;
+}
+
+/* ABOUT */
+
+.about-box{
+background:rgba(255,255,255,0.05);
+padding:50px;
+border-radius:35px;
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,0.08);
+line-height:2;
+font-size:17px;
+opacity:0.85;
+}
+
+
+
+
+/* SKILL ITEMS */
+
+.skill-item{
+    display:inline-block;
+
+    padding:14px 24px;
+    margin:12px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,0.05);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    color:#fff;
+
+    transition:0.4s ease;
+
+    backdrop-filter:blur(10px);
+}
+
+/* ICONS */
+
+.skill-item img{
+
+    width:20px;
+
+    height:20px;
+
+    object-fit:contain;
+}
+
+ 
+  /* TEXT HOVER ONLY */
+
+.skill-item:hover{
+
+    transform:translateY(-5px);
+
+    color:#4d8dff;
+
+    text-shadow:
+    0 0 10px rgba(65,105,225,0.5),
+    0 0 20px rgba(65,105,225,0.3);
+}
+
+/* ICON HOVER */
+
+.skill-item:hover img{
+
+    transform:scale(1.15);
+
+    filter:drop-shadow(0 0 10px rgba(65,105,225,0.6));
+}
+
+
+
+
+
+
+/* FULLSCREEN CTA --- */
+.parallax-cta {
+    /* Updated for full-screen dimensions */
+    width: 100vw;
+    height: 100vh;
+    
+    /* Background configuration */
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("./Sofa poster.jpg");
+    background-attachment: fixed; 
+    background-position: center;
+    background-size: cover; /* Added to ensure the image scales to fit without stretching */
+    background-repeat: no-repeat; /* Prevents the image from tiling */
+    
+    /* Layout */
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    
+    /* Prevents unwanted horizontal scrollbars from the 100vw width */
+    overflow: hidden; 
+}
+
+.parallax-cta h2 { 
+    font-family: 'Cormorant Garamond'; 
+    font-style: italic; 
+    font-size: clamp(2rem, 4vw, 3.5rem); 
+}
+        /* --- FOOTER --- */
+        footer { padding: 100px 10% 50px; text-align: center; border-top: 1px solid var(--glass-border); }
+        .footer-cta { font-family: 'Cormorant Garamond'; font-style: italic; font-size: 3rem; text-decoration: none; color: white; transition: 0.3s; }
+        .footer-cta:hover { color: var(--accent); text-shadow: 0 0 20px var(--accent); }
+
+        @media (max-width: 968px) {
+            .hero { flex-direction: column; text-align: center; padding-top: 150px; height: auto; }
+            .hero-left p { margin: 0 auto 40px; }
+            .hero-btns { justify-content: center; }
+            .about-section { flex-direction: column; gap: 40px; }
+            .image-card { width: 300px; height: 400px; }
+            * { cursor: auto !important; }
+            #custom-cursor, #cursor-glow { display: none; }
+        }
+    
+
+/* PROJECT GRID */
+
+.project-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:35px;
+}
+
+.project-card{
+background:rgba(255,255,255,0.05);
+border-radius:28px;
+overflow:hidden;
+border:1px solid rgba(255,255,255,0.08);
+transition:0.5s;
+backdrop-filter:blur(20px);
+}
+
+.project-card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 40px rgba(47,107,255,0.25);
+}
+
+.project-card img{
+width:100%;
+height:260px;
+object-fit:cover;
+transition:0.8s;
+}
+
+.project-card:hover img{
+transform:scale(1.08);
+}
+
+.project-content{
+padding:28px;
+}
+
+.project-content h3{
+margin-bottom:14px;
+font-size:24px;
+}
+
+.project-content p{
+opacity:0.7;
+line-height:1.8;
+}
+
+/* CONTACT */
+
+.contact-box{
+max-width:900px;
+margin:auto;
+text-align:center;
+}
+
+.contact-box p{
+line-height:1.9;
+opacity:0.75;
+margin-bottom:40px;
+}
+
+.contact-links{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+}
+
+.contact-links a{
+padding:15px 28px;
+border-radius:60px;
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.08);
+backdrop-filter:blur(20px);
+color:white;
+text-decoration:none;
+transition:0.4s;
+}
+
+.contact-links a:hover{
+transform:translateY(-5px);
+box-shadow:0 0 30px rgba(47,107,255,0.25);
+}
+
+/* FOOTER */
+
+footer{
+padding:45px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,0.08);
+opacity:0.65;
+}
+
+/* REVEAL */
+
+.reveal{
+opacity:0;
+transform:translateY(80px);
+filter:blur(10px);
+transition:1s;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+filter:blur(0);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:950px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-left h1{
+font-size:60px;
+}
+
+.hero-left h3{
+font-size:22px;
+}
+
+.image-card{
+width:100%;
+max-width:380px;
+height:500px;
+}
+
+.section-title{
+font-size:42px;
+}
+
+.fullscreen-content h1{
+font-size:52px;
+}
+
+nav{
+display:none;
+}
+
+}
+.skills-list
+{
+    list-style: none;
+    line-height: 2;
+    opacity: 0.8;
+    display: flex;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+/* CARD */
+
+.project-card{
+    background:#111;
+    border-radius:20px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    height:100%;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    transition:0.4s;
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+}
+
+/* IMAGE */
+
+.project-card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    display:block;
+}
+
+/* CONTENT */
+
+.project-content{
+    padding:20px;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+
+.project-content h3{
+    color:white;
+    margin-bottom:10px;
+}
+
+.project-content p{
+    color:#aaa;
+    line-height:1.6;
+    flex:1;
+}
+
+/* BUTTON */
+
+.view-btn{
+    margin-top:20px;
+    padding:12px 20px;
+    border:none;
+    border-radius:12px;
+    background:#4169E1;
+    color:white;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.view-btn:hover{
+    background:#5b7cff;
+    transform:translateY(-3px);
+}
+
+/* POPUP */
+
+.image-popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.95);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    padding:40px;
+}
+
+.image-popup img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:15px;
+    box-shadow:0 0 40px rgba(255,255,255,0.1);
+}
+
+/* CLOSE BUTTON */
+
+.close-popup{
+    position:absolute;
+    top:20px;
+    right:35px;
+    font-size:50px;
+    color:white;
+    cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- MOUSE GLOW -->
+
+<div class="mouse-glow"></div>
+
+<!-- PARTICLES -->
+
+<div class="particles">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="logo">
+VEERESH S. B.
+</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-glow"></div>
+
+<!-- LEFT -->
+
+<div class="hero-left reveal">
+
+<h3 class="welcome-text">
+👋 HELLO WELCOME TO MY PORTFOLIO
+</h3>
+
+<h1>
+VEERESH <span>S. B.</span>
+</h1>
+
+<h3>
+Creative Designer Specializing in Branding,
+Movie Posters, Social Media & 3D Visual Design
+</h3>
+
+<p>
+Designing cinematic visuals and premium digital experiences
+with creativity, motion, and modern aesthetics.
+</p>
+
+<div class="hero-buttons">
+
+    <!-- View Projects Button -->
+    <a href="#projects" class="btn">
+        View Projects
+    </a>
+
+    <!-- Download CV Button -->
+    <a href="./Download CV.pdf" download class="btn outline">
+        Download CV
+    </a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="hero-right reveal">
+
+<div class="image-card">
+
+<img src="./Veeresh.jpg">
+
+<div class="image-overlay">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Carousel Section -->
+    <section id="featured" class="section-container">
+        <h2 class="blue-glow">Featured Creative Showcase</h2>
+        <p>Cinematic posters, gaming artwork,
+and premium visual designs.
+</p>
+        <div class="carousel-container">
+            <div class="carousel" id="carousel">
+                <div class="card prev">
+                    <img src="./Pubg-23-07-25.jpg" alt="Work 1">
+                    <div class="label"><h3>PUBG Cinematic</h3><p>Composite Art</p></div>
+                </div>
+                <div class="card active">
+                    <img src="./Kantara.jpg" alt="Work 2">
+                    <div class="label"><h3>Kantara Concept</h3><p>Headset Design</p></div>
+                </div>
+                <div class="card next">
+                    <img src="./Uri.jpg" alt="Work 3">
+                    <div class="label"><h3>URI Poster</h3><p>Movie Graphics</p></div>
+                </div>
+                <div class="card hidden">
+                    <img src="./Classic.jpg" alt="Work 4">
+                    <div class="label"><h3>Royal Enfield</h3><p>Ad Design</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+<!-- PARALLAX SHOWCASE -->
+    <section class="parallax-cta">
+        <h2>Creating Visual Stories Through Design</h2>
+        <p style="max-width: 600px; margin-top: 20px; color: var(--text-dim); font-size: 0.9rem;">Blending creativity, motion, and cinematic aesthetics into modern digital experiences.</p>
+    </section>
+
+
+    
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2 class="section-title reveal">
+About Me
+</h2>
+
+<div class="about-box reveal">
+
+I am a passionate creative graphic designer focused on branding,
+cinematic poster design, social media creatives, and digital visual experiences.
+My goal is to create bold and modern designs that connect with people and
+leave a strong visual impact.
+
+<br><br>
+
+With skills in graphic design, motion graphics, photo editing, and 3D software,
+I combine creativity with technical precision to build professional visual
+solutions for brands and clients.
+
+<br><br>
+
+I believe great design is not only beautiful — it should communicate emotion,
+story, and identity.
+
+</div>  
+
+</section>
+<!-- SKILLS -->
+
+<section id="skills">
+
+<h2 class="section-title reveal">
+Creative Skills & Software
+</h2>
+
+<p class="section-subtitle reveal">
+Professional tools and creative software I use
+to craft modern visual experiences.
+</p>
+
+<div class="skills-box">
+    <div class="skill-item">
+<div class="skill-item">
+        
+        MS Office
+    </div>
+    
+    <div class="skill-item">
+       
+        Adobe Photoshop
+    </div>
+
+    <div class="skill-item">
+        
+        Adobe Lightroom
+    </div>
+
+    <div class="skill-item">
+        
+        Adobe Animate CC
+    </div>
+
+    <div class="skill-item">
+        
+        Adobe InDesign
+    </div>
+<div class="skill-item">
+       
+        Adobe Audition
+    </div>
+
+    <div class="skill-item">
+        
+        CreiDRAW
+    </div>
+
+  <div class="skill-item">
+        
+       3ds Max
+    </div>
+
+</div>
+
+
+</div>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<h2 class="section-title reveal">
+Featured Projects
+</h2>
+
+<p class="section-subtitle reveal">
+A collection of branding, poster, social media,
+and cinematic visual projects.
+</p>
+
+<div class="project-grid">
+
+    
+
+    <!-- CARD 1 -->
+
+    <div class="project-card reveal">
+
+        <img src="./Kantara.jpg">
+
+        <div class="project-content">
+
+            <h3>Movie Poster Artwork</h3>
+
+            <p>
+           Bold and visually striking movie poster artwork crafted to capture emotion, drama, and audience attention.
+            </p>
+
+            <button class="view-btn"
+            onclick="openImage('Kantara.jpg')">
+            View Full Image
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- CARD 2 -->
+
+<div class="project-card reveal">
+
+    <img src="./JBL Head Phone2.jpg">
+
+    <div class="project-content">
+
+        <h3>Product Poster Design</h3>
+
+        <p>
+        High-impact promotional artwork featuring cinematic lighting, bold typography, and premium 3D product presentation.
+        </p>
+
+        <button class="view-btn"
+        onclick="openImage('.JBL Head Phone2.jpg')">
+
+        View Full Image
+
+        </button>
+
+    </div>
+
+</div>
+
+    <!-- CARD 3 -->
+
+    <div class="project-card reveal">
+
+        <img src="./Sofa poster.jpg">
+
+        <div class="project-content">
+
+            <h3>Home Decor Visual Design</h3>
+
+            <p>
+            Stylized promotional visuals highlighting modern furniture concepts with clean composition and premium presentation.
+            </p>
+
+            <button class="view-btn"
+            onclick="openImage('Sofa poster.jpg')">
+            View Full Image
+            </button>
+
+        </div>
+
+    </div>
+    
+<!-- CARD 4 -->
+
+    <div class="project-card reveal">
+
+        <img src="./republic day 3.jpg">
+
+        <div class="project-content">
+
+            <h3>Republic Day Poster Design</h3>
+
+            <p>
+            Patriotic visual artwork celebrating the spirit of unity, freedom, and pride through creative national-themed design.
+            </p>
+
+            <button class="view-btn"
+            onclick="openImage('republic day 3.jpg')">
+            View Full Image
+            </button>
+
+        </div>
+
+    </div>
+
+<!-- CARD 5 -->
+
+    <div class="project-card reveal">
+
+        <img src="./kantara vector art.jpg">
+
+        <div class="project-content">
+
+            <h3>Digital Vector Design</h3>
+
+            <p>
+            Creative vector-based movie artwork featuring dynamic composition and traditional cultural aesthetics.
+            </p>
+
+            <button class="view-btn"
+            onclick="openImage('kantara vector art.jpg')">
+            View Full Image
+            </button>
+
+        </div>
+
+    </div>
+<!-- CARD 6 -->
+
+    <div class="project-card reveal">
+
+        <img src="./kantara2.jpg">
+
+        <div class="project-content">
+
+            <h3>Cinematic Movie Poster Design</h3>
+
+            <p>
+            Dark fantasy-inspired poster artwork crafted with dramatic lighting, powerful storytelling visuals, and intense cinematic composition.
+            </p>
+
+            <button class="view-btn"
+            onclick="openImage('kantara2.jpg')">
+            View Full Image
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- CARD 7 -->
+
+    <div class="project-card reveal">
+
+        <img src="./F b Banner.jpg">
+
+        <div class="project-content">
+
+            <h3>Animation Course Visual Design</h3>
+
+            <p>
+            Stylized promotional poster focused on 3D animation and VFX training with bold layouts and immersive visuals.
+            </p>
+
+            <button class="view-btn"
+            onclick="openImage('F b Banner.jpg')">
+            View Full Image
+            </button>
+
+        </div>
+
+    </div>
+
+
+<!-- CARD 8 -->
+
+    <div class="project-card reveal">
+
+        <img src="./Newpaper Ad.jpg">
+
+        <div class="project-content">
+
+            <h3>Creative Media Poster Design</h3>
+
+            <p>
+            High-impact promotional artwork combining modern graphics, cinematic characters, and visually engaging course presentation.
+            </p>
+
+            <button class="view-btn"
+            onclick="openImage('Newpaper Ad.jpg')">
+            View Full Image
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- CARD 9 -->
+
+    <div class="project-card reveal">
+
+        <img src="./Uri.jpg">
+
+        <div class="project-content">
+
+            <h3>War-Themed Visual Artwork</h3>
+
+            <p>
+           High-impact poster composition blending patriotic symbolism, cinematic effects, and intense battlefield aesthetics.
+            </p>
+
+            <button class="view-btn"
+            onclick="openImage('Uri.jpg')">
+            View Full Image
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- CARD 10 -->
+
+    <div class="project-card reveal">
+
+        <img src="./ugadi poster1.jpg">
+
+        <div class="project-content">
+
+            <h3>Ugadi Celebration Artwork</h3>
+
+            <p>
+           Festive poster design crafted with vibrant cultural symbols, decorative layouts, and joyful traditional vibes.
+            </p>
+
+            <button class="view-btn"
+            onclick="openImage('ugadi poster1.jpg')">
+            View Full Image
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- CARD 11 -->
+
+    <div class="project-card reveal">
+
+        <img src="./Holi AiImageEnhancer.jpg">
+
+        <div class="project-content">
+
+            <h3>Holi Celebration Design</h3>
+
+            <p>
+            Creative festive poster featuring bright colors, playful visuals, and energetic cultural celebration aesthetics.
+
+            </p>
+
+            <button class="view-btn"
+            onclick="openImage('Holi AiImageEnhancer.jpg')">
+            View Full Image
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- CARD 12 -->
+
+    <div class="project-card reveal">
+
+        <img src="./Classic.jpg">
+
+        <div class="project-content">
+
+            <h3>Cinematic Automotive Artwork</h3>
+
+            <p>
+         Creative poster artwork showcasing classic bike styling with a bold and high-impact advertising approach.
+            </p>
+
+            <button class="view-btn"
+            onclick="openImage('Classic.jpg')">
+            View Full Image
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- CARD 13 -->
+
+    <div class="project-card reveal">
+
+        <img src="./Pubg-23-07-25.jpg">
+
+        <div class="project-content">
+
+            <h3>Gaming Poster Design</h3>
+
+            <p>
+           Action-packed gaming artwork crafted with cinematic effects, dynamic composition, and immersive battle royale aesthetics.
+            </p>
+
+            <button class="view-btn"
+            onclick="openImage('Pubg-23-07-25.jpg')">
+            View Full Image
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- CARD 14 -->
+
+    <div class="project-card reveal">
+
+        <img src="./Shampoo ad.jpg">
+
+        <div class="project-content">
+
+            <h3>Product Advertisement Design</h3>
+
+            <p>
+            Fresh and vibrant cosmetic poster artwork crafted with splash effects, natural elements, and premium product presentation.
+            </p>
+
+            <button class="view-btn"
+            onclick="openImage('Shampoo ad.jpg')">
+            View Full Image
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- CARD 15 -->
+
+    <div class="project-card reveal">
+
+        <img src="./Ad Design.jpg">
+
+        <div class="project-content">
+
+            <h3>Graphic Design Advertisement</h3>
+
+            <p>
+            Creative promotional artwork showcasing modern graphic design services with stylish visuals and professional composition.
+            </p>
+
+            <button class="view-btn"
+            onclick="openImage('Ad Design.jpg')">
+            View Full Image
+            </button>
+
+        </div>
+
+    </div>
+
+<!-- IMAGE POPUP -->
+
+<div id="imagePopup" class="image-popup">
+
+    <span class="close-popup" onclick="closeImage()">&times;</span>
+
+    <img id="popupImg">
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="contact-box reveal">
+
+<h2 class="section-title">
+Get In Touch
+</h2>
+
+<p>
+Interested in working together or creating something unique?
+Let’s connect and build visually powerful experiences.
+</p>
+
+<div class="contact-links">
+
+<a href="veereshbyahatti29@gmail.com">Email</a>
+<a href="7026819962">Phone</a>
+<a href="#">LinkedIn</a>
+<a href="#">Instagram</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+© 2026 VEERESH S. B.
+All Rights Reserved.
+
+</footer>
+
+<!-- SWIPER -->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+
+
+/* SWIPER */
+
+var swiper = new Swiper(".mySwiper", {
+
+effect: "coverflow",
+grabCursor: true,
+centeredSlides: true,
+slidesPerView: "auto",
+loop:true,
+
+coverflowEffect: {
+rotate: 25,
+stretch: 0,
+depth: 180,
+modifier: 1,
+slideShadows: true,
+},
+
+});
+
+/* MOUSE GLOW */
+
+const glow = document.querySelector('.mouse-glow');
+
+document.addEventListener('mousemove',(e)=>{
+
+glow.style.left = e.clientX + 'px';
+glow.style.top = e.clientY + 'px';
+
+});
+
+/* REVEAL */
+
+const reveals = document.querySelectorAll('.reveal');
+
+window.addEventListener('scroll', revealSection);
+
+function revealSection(){
+
+reveals.forEach(section=>{
+
+const windowHeight = window.innerHeight;
+const revealTop = section.getBoundingClientRect().top;
+const revealPoint = 120;
+
+if(revealTop < windowHeight - revealPoint){
+section.classList.add('active');
+}
+
+});
+
+}
+// 3D Carousel Script
+        const cards = document.querySelectorAll('.card');
+        cards.forEach((card, index) => {
+            card.addEventListener('click', () => {
+                cards.forEach(c => c.className = 'card hidden');
+                card.className = 'card active';
+                const prevIndex = (index - 1 + cards.length) % cards.length;
+                const nextIndex = (index + 1) % cards.length;
+                cards[prevIndex].className = 'card prev';
+                cards[nextIndex].className = 'card next';
+            });
+        });
+
+revealSection();
+
+</script>
+
+<script>
+
+function openImage(src){
+    document.getElementById("imagePopup").style.display = "flex";
+    document.getElementById("popupImg").src = src;
+}
+
+function closeImage(){
+    document.getElementById("imagePopup").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>
+ 
